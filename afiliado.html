@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Afiliado - Samuel Tech IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>⚡ Samuel Tech IA</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="afiliado.html" class="active">Afiliados</a>
+                <a href="vendedor.html">Vendedores</a>
+                <a href="login.html">Entrar</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="dashboard-container">
+        <div class="sidebar">
+            <div class="user-profile" id="userProfile">
+                <div class="avatar">👤</div>
+                <h3 id="afiliadoNome">Faça login</h3>
+                <p id="afiliadoEmail"></p>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item active" onclick="mostrarPainel('vendas')">📊 Minhas Vendas</div>
+                <div class="menu-item" onclick="mostrarPainel('comissoes')">💰 Comissões</div>
+                <div class="menu-item" onclick="mostrarPainel('links')">🔗 Links</div>
+                <div class="menu-item" onclick="mostrarPainel('recibos')">🧾 Meus Recibos</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="pix-notification-area" id="pixNotifications">
+                <!-- Notificações de PIX vão aparecer aqui -->
+            </div>
+
+            <div id="painelVendas" class="painel-content active">
+                <h2>📊 Minhas Vendas</h2>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalVendasAfiliado">0</div>
+                        <div class="stat-label">Total de Vendas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalComissoesAfiliado">R$ 0</div>
+                        <div class="stat-label">Comissões Recebidas</div>
+                    </div>
+                </div>
+                <div id="listaVendasAfiliado" class="vendas-lista"></div>
+            </div>
+
+            <div id="painelComissoes" class="painel-content">
+                <h2>💰 Histórico de Comissões</h2>
+                <div id="historicoComissoes"></div>
+            </div>
+
+            <div id="painelLinks" class="painel-content">
+                <h2>🔗 Seus Links de Afiliado</h2>
+                <div class="link-card">
+                    <p>Link para divulgar cursos:</p>
+                    <div class="link-box">
+                        <input type="text" id="linkAfiliadoGeral" readonly>
+                        <button onclick="copiarLink('geral')">Copiar</button>
+                    </div>
+                </div>
+                <div class="link-card">
+                    <p>Links específicos por curso:</p>
+                    <div id="linksPorCurso"></div>
+                </div>
+            </div>
+
+            <div id="painelRecibos" class="painel-content">
+                <h2>🧾 Meus Recibos de Vendas</h2>
+                <div id="meusRecibos"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/database.js"></script>
+    <script src="js/payments.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
