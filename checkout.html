@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Samuel Tech IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>⚡ Samuel Tech IA</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="afiliado.html">Afiliados</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="checkout-container">
+        <div class="checkout-card">
+            <div class="curso-info" id="cursoInfo">
+                <h2>Finalizar Compra</h2>
+            </div>
+            
+            <div class="pix-area" id="pixArea">
+                <div class="pix-qrcode">
+                    <img id="qrcodeImg" src="" alt="QR Code PIX">
+                    <div class="pix-codigo">
+                        <p>Código PIX copiável:</p>
+                        <input type="text" id="pixCode" readonly>
+                        <button onclick="copiarPix()">Copiar Código</button>
+                    </div>
+                </div>
+                
+                <div class="payment-status" id="paymentStatus">
+                    <p>⏳ Aguardando pagamento...</p>
+                </div>
+            </div>
+
+            <div class="payment-instructions">
+                <h3>📌 Instruções:</h3>
+                <ol>
+                    <li>Abra seu app bancário</li>
+                    <li>Escolha pagamento via PIX</li>
+                    <li>Copie o código ou escaneie o QR Code</li>
+                    <li>Após o pagamento, o acesso será liberado automaticamente</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/database.js"></script>
+    <script src="js/payments.js"></script>
+</body>
+</html>
