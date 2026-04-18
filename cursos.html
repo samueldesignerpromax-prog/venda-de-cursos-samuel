@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Samuel Tech IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>⚡ Samuel Tech IA</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="cursos.html" class="active">Cursos</a>
+                <a href="afiliado.html">Afiliados</a>
+                <a href="vendedor.html">Vendedores</a>
+                <a href="login.html">Entrar</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>📖 Nossos Cursos</h1>
+        <p>Escolha o curso ideal para sua carreira</p>
+    </section>
+
+    <section class="filtros">
+        <input type="text" id="buscaCurso" placeholder="🔍 Buscar curso..." onkeyup="filtrarCursos()">
+        <select id="filtroNivel" onchange="filtrarCursos()">
+            <option value="todos">Todos os níveis</option>
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+        </select>
+    </section>
+
+    <section class="courses-container">
+        <div class="courses-grid" id="allCourses"></div>
+    </section>
+
+    <script src="js/database.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
