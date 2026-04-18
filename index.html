@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Tech IA - Cursos com Afiliados</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🚀 Samuel Tech IA</h1>
+                <span>cursos, afiliados e vendedores</span>
+            </div>
+            <div class="nav-buttons" id="authButtons">
+                <button onclick="openModal('login')">Entrar</button>
+                <button onclick="openModal('register')">Cadastrar</button>
+            </div>
+            <div id="userInfo" style="display: none;"></div>
+        </header>
+
+        <section class="hero">
+            <h2>🔥 Transforme sua carreira com IA</h2>
+            <p>Venda cursos, ganhe comissões e veja seu negócio crescer</p>
+        </section>
+
+        <section id="cursosSection">
+            <h2>📚 Nossos Cursos</h2>
+            <div class="courses-grid" id="coursesContainer"></div>
+        </section>
+
+        <section class="recibos-section">
+            <h3>📢 Últimas compras via afiliados (prova social)</h3>
+            <div class="recibos-grid" id="recibosFeed"></div>
+            <button onclick="adicionarReciboFalso()" class="btn-small">➕ Simular nova venda (admin)</button>
+        </section>
+
+        <section id="painelAfiliado" style="display: none;">
+            <h3>📊 Seu painel de vendas</h3>
+            <div id="vendasAfiliadoList"></div>
+            <div class="link-afiliado">
+                <strong>🔗 Seu link único:</strong>
+                <span id="linkAfiliado"></span>
+                <button onclick="copiarLink()">Copiar</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Samuel Tech IA - Inovação em tecnologia</p>
+        </footer>
+    </div>
+
+    <!-- MODAIS -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>Login</h3>
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginSenha" placeholder="Senha">
+            <button onclick="fazerLogin()">Entrar</button>
+            <button onclick="fecharModal('login')">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <h3>Cadastro</h3>
+            <input type="text" id="regNome" placeholder="Nome completo">
+            <input type="email" id="regEmail" placeholder="Email">
+            <input type="password" id="regSenha" placeholder="Senha">
+            <select id="regTipo">
+                <option value="cliente">Cliente (comprar cursos)</option>
+                <option value="afiliado">Afiliado (ganhar comissões)</option>
+                <option value="vendedor">Vendedor (nível abaixo do afiliado)</option>
+            </select>
+            <button onclick="fazerCadastro()">Cadastrar</button>
+            <button onclick="fecharModal('register')">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/affiliate.js"></script>
+</body>
+</html>
