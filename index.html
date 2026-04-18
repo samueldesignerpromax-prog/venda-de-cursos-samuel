@@ -3,84 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Tech IA - Cursos com Afiliados</title>
+    <title>Samuel Tech IA - Cursos de Tecnologia</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <h1>🚀 Samuel Tech IA</h1>
-                <span>cursos, afiliados e vendedores</span>
+                <h1>⚡ Samuel Tech IA</h1>
             </div>
-            <div class="nav-buttons" id="authButtons">
-                <button onclick="openModal('login')">Entrar</button>
-                <button onclick="openModal('register')">Cadastrar</button>
+            <div class="nav-links">
+                <a href="index.html" class="active">Início</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="afiliado.html">Afiliados</a>
+                <a href="vendedor.html">Vendedores</a>
+                <a href="login.html" id="loginLink">Entrar</a>
+                <span id="userNameDisplay" style="display: none;"></span>
             </div>
-            <div id="userInfo" style="display: none;"></div>
-        </header>
-
-        <section class="hero">
-            <h2>🔥 Transforme sua carreira com IA</h2>
-            <p>Venda cursos, ganhe comissões e veja seu negócio crescer</p>
-        </section>
-
-        <section id="cursosSection">
-            <h2>📚 Nossos Cursos</h2>
-            <div class="courses-grid" id="coursesContainer"></div>
-        </section>
-
-        <section class="recibos-section">
-            <h3>📢 Últimas compras via afiliados (prova social)</h3>
-            <div class="recibos-grid" id="recibosFeed"></div>
-            <button onclick="adicionarReciboFalso()" class="btn-small">➕ Simular nova venda (admin)</button>
-        </section>
-
-        <section id="painelAfiliado" style="display: none;">
-            <h3>📊 Seu painel de vendas</h3>
-            <div id="vendasAfiliadoList"></div>
-            <div class="link-afiliado">
-                <strong>🔗 Seu link único:</strong>
-                <span id="linkAfiliado"></span>
-                <button onclick="copiarLink()">Copiar</button>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Samuel Tech IA - Inovação em tecnologia</p>
-        </footer>
-    </div>
-
-    <!-- MODAIS -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <h3>Login</h3>
-            <input type="email" id="loginEmail" placeholder="Email">
-            <input type="password" id="loginSenha" placeholder="Senha">
-            <button onclick="fazerLogin()">Entrar</button>
-            <button onclick="fecharModal('login')">Cancelar</button>
         </div>
-    </div>
+    </nav>
 
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <h3>Cadastro</h3>
-            <input type="text" id="regNome" placeholder="Nome completo">
-            <input type="email" id="regEmail" placeholder="Email">
-            <input type="password" id="regSenha" placeholder="Senha">
-            <select id="regTipo">
-                <option value="cliente">Cliente (comprar cursos)</option>
-                <option value="afiliado">Afiliado (ganhar comissões)</option>
-                <option value="vendedor">Vendedor (nível abaixo do afiliado)</option>
-            </select>
-            <button onclick="fazerCadastro()">Cadastrar</button>
-            <button onclick="fecharModal('register')">Cancelar</button>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate-title">🚀 Transforme sua Carreira com <span class="gradient-text">Inteligência Artificial</span></h1>
+            <p class="animate-subtitle">Aprenda as tecnologias mais avançadas e ganhe dinheiro indicando nossos cursos</p>
+            <div class="hero-buttons">
+                <a href="cursos.html" class="btn-primary">Ver Cursos</a>
+                <a href="afiliado.html" class="btn-secondary">Seja Afiliado</a>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="totalVendas">0</div>
+                <div class="stat-label">Vendas Realizadas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalAfiliados">0</div>
+                <div class="stat-label">Afiliados Ativos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalComissoes">R$ 0</div>
+                <div class="stat-label">Comissões Pagas</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recibos-live">
+        <h2>📢 Vendas em Tempo Real</h2>
+        <div class="recibos-feed" id="liveRecibos">
+            <div class="recibo-card loading">Carregando vendas recentes...</div>
+        </div>
+    </section>
+
+    <section class="cursos-destaque">
+        <h2>🔥 Cursos Mais Vendidos</h2>
+        <div class="courses-grid" id="destaqueCursos"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Samuel Tech IA - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/database.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/courses.js"></script>
-    <script src="js/affiliate.js"></script>
 </body>
 </html>
